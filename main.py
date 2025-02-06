@@ -122,5 +122,5 @@ def show_technician_menu(db, technician):
         else:
             print("Invalid choice. Please try again.")
 
-if _name_ == "_main_":
+if __name__ == "_main_":
     main()
