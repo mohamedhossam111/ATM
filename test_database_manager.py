@@ -1,4 +1,3 @@
-test_database_manager.py
 import unittest
 from database_manager import DatabaseManager
 from unittest.mock import MagicMock
