@@ -1,4 +1,3 @@
-test_customer.py
 import unittest
 from customer import Customer
 from unittest.mock import MagicMock
