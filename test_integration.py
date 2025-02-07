@@ -28,6 +28,3 @@ class TestIntegration(unittest.TestCase):
         transactions = self.db.get_transactions(self.user.user_id)
         self.assertGreater(len(transactions), 0)
         self.assertEqual(transactions[0][2], "Deposit")
-
-if __name__ == "_main_":
-    unittest.main()
