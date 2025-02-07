@@ -34,6 +34,3 @@ class TestCustomer(unittest.TestCase):
         
         # Ensure that the withdrawal was not processed due to insufficient balance
         self.assertEqual(self.customer.balance, 50.0)
-
-if __name__ == "_main_":
-    unittest.main()
