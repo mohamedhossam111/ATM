@@ -29,5 +29,5 @@ class TestIntegration(unittest.TestCase):
         self.assertGreater(len(transactions), 0)
         self.assertEqual(transactions[0][2], "Deposit")
 
-if _name_ == '_main_':
+if __name__ == "_main_":
     unittest.main()

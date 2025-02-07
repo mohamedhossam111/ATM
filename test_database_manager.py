@@ -29,5 +29,5 @@ class TestDatabaseManager(unittest.TestCase):
             'UPDATE users SET balance=? WHERE id=?', (150.0, 1)
         )
 
-if __name__ == '_main_':
+if __name__ == "_main_":
     unittest.main()

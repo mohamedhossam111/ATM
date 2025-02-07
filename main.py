@@ -122,5 +122,6 @@ def show_technician_menu(db, technician):
         else:
             print("Invalid choice. Please try again.")
 
+# Correct condition to check if the script is run directly
 if __name__ == "_main_":
     main()
