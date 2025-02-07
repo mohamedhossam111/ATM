@@ -1,5 +1,7 @@
+import sqlite3
+
 class DatabaseManager:
-    def _init_(self):
+    def __init__(self):  # Fixed the constructor
         self.connection = sqlite3.connect("atm.db")
         self.cursor = self.connection.cursor()
 
@@ -53,13 +55,15 @@ class DatabaseManager:
         self.cursor.execute('''
             SELECT balance FROM users WHERE id=?
         ''', (user_id,))
-        return self.cursor.fetchone()[0]
+        result = self.cursor.fetchone()
+        return result[0] if result else None  # Added a safety check
 
     def store_transaction(self, user_id, transaction_type, amount, new_balance, timestamp):
+        date, time = timestamp.split()
         self.cursor.execute('''
             INSERT INTO transactions (user_id, transaction_type, amount, date, time, new_balance)
             VALUES (?, ?, ?, ?, ?, ?)
-        ''', (user_id, transaction_type, amount, timestamp.split()[0], timestamp.split()[1], new_balance))
+        ''', (user_id, transaction_type, amount, date, time, new_balance))
         self.connection.commit()
 
     def update_balance(self, user_id, new_balance):
